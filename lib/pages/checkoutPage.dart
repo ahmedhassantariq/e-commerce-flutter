@@ -40,14 +40,21 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
   List<ProductModel> getList() {
     final FirebaseService firebaseService = Provider.of<FirebaseService>(context, listen: false);
-    return firebaseService.productList;
+    List<ProductModel> list = [];
+    firebaseService.productList.forEach((element) {
+      if(list.any((o) => o.productID == element.productID)){
+
+      } else{
+        list.add(element);
+      }
+    });
+    return list;
   }
 
    Future<void> confirmOrder() async{
     final FirebaseService firebaseService = Provider.of<FirebaseService>(context, listen: false);
-    if(
-    firstNameController.text.isEmpty&&lastNameController.text.isEmpty&&
-        streetController.text.isEmpty&&stateController.text.isEmpty&&countryController.text.isEmpty
+    if(firstNameController.text.isEmpty||lastNameController.text.isEmpty||
+        streetController.text.isEmpty||stateController.text.isEmpty||countryController.text.isEmpty
     ) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           duration: Duration(milliseconds: 250),

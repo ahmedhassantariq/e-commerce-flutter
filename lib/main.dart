@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           theme: myThemeData,
           debugShowCheckedModeBanner: false,
+          scrollBehavior: const ScrollBehavior().copyWith(scrollbars: false),
           title: 'Green Heaven',
           home: const AuthGate(),
         ));

@@ -56,6 +56,91 @@ class FirebaseService with ChangeNotifier {
         .get().asStream();
     return data;
   }
+  Future<String> getHeroImage() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("HeroImage")
+        .get();
+    return snapshot.get("imageUrl");
+  }
+
+  Future<ProductModel> getFeature1Product() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("Feature1Product")
+        .get();
+    return ProductModel.fromDocMap(snapshot);
+  }
+  Future<ProductModel> getFeature2Product() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("Feature2Product")
+        .get();
+    return ProductModel.fromDocMap(snapshot);
+  }
+
+  Future<String> getExclusiveCollectionText() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("ExclusiveCollectionText")
+        .get();
+    return snapshot.get('text');
+  }
+  Future<String> getCustomerDealsText() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("CustomerDealsText")
+        .get();
+    return snapshot.get('text');
+  }
+
+  Future<ProductModel> getExclusive1Product() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("Exclusive1Product")
+        .get();
+    return ProductModel.fromDocMap(snapshot);
+  }
+  Future<ProductModel> getExclusive2Product() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("Exclusive2Product")
+        .get();
+    return ProductModel.fromDocMap(snapshot);
+  }
+  Future<ProductModel> getExclusive3Product() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("Exclusive3Product")
+        .get();
+    return ProductModel.fromDocMap(snapshot);
+  }
+  Future<ProductModel> getExclusive4Product() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection("business")
+        .doc("products")
+        .collection("allProducts")
+        .doc("Exclusive4Product")
+        .get();
+    return ProductModel.fromDocMap(snapshot);
+  }
+
 
   Stream<QuerySnapshot> searchProduct(String filter) {
     return _firestore.collection('business').doc('products').collection('featuredProducts').snapshots();
@@ -80,7 +165,9 @@ class FirebaseService with ChangeNotifier {
   }
 
   void updateCartList(ProductModel productModel) {
-    productList.add(productModel);
+    if(!productList.any((element) => productModel.productID==element.productID)) {
+      productList.add(productModel);
+    }
   }
 
 
@@ -165,8 +252,7 @@ class FirebaseService with ChangeNotifier {
     String userID = FirebaseAuth.instance.currentUser!.uid;
     await _firestore.collection('business').doc('users').collection(userID).doc(
         'cart').collection('cartData').doc(productModel.productID).delete();
-    productList.removeWhere((element) =>
-    element.productID == productModel.productID);
+    productList.removeWhere((element) => element.productID == productModel.productID);
     notifyListeners();
   }
 

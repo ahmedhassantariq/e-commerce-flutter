@@ -125,11 +125,7 @@ class _HomepageState extends State<Homepage> {
           style: TextStyle(color: HexColor("#38C1CE")));
     }
     Widget _showLeading(BuildContext context) {
-      return isStore ? Builder(builder: (context) => IconButton(
-          icon: const Icon(Icons.shopping_cart),
-          color: HexColor("#38C1CE"),
-          onPressed: () => Scaffold.of(context).openDrawer()))
-          : Icon(Icons.shopping_cart_outlined, color: HexColor("#38C1CE"));
+      return Builder(builder: (context) => Padding(padding: EdgeInsets.all(8.0),child: Image.asset("assets/images/main.png", height: 50,width: 50,)));
     }
     void _clearSearchQuery() {
       setState(() {

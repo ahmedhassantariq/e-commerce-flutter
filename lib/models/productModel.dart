@@ -50,5 +50,19 @@ class ProductModel {
         ));
   }
 
+  factory ProductModel.fromDocMap(DocumentSnapshot<Map<String, dynamic>> documentSnapshot){
+    return(ProductModel(
+      productID: documentSnapshot.get('productID'),
+      productTitle: documentSnapshot.get('productTitle'),
+      family: documentSnapshot.get('family'),
+      size: documentSnapshot.get('size'),
+      rating: documentSnapshot.get('rating'),
+      quantity: documentSnapshot.get('quantity'),
+      price: documentSnapshot.get('price'),
+      discount: documentSnapshot.get('discount'),
+      imageUrl: documentSnapshot.get('imageUrl'),
+    ));
+  }
+
 
 }

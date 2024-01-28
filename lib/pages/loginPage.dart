@@ -2,6 +2,7 @@ import 'package:business_flutter/components/authTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
 import '../services/auth/auth_service.dart';
@@ -55,12 +56,12 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network("https://firebasestorage.googleapis.com/v0/b/delivery-87e23.appspot.com/o/business_images%2F628283.png?alt=media&token=d305c42c-617a-4e15-a30b-c89768a07092",
-                    height: 200,
-                    width: 200,
+                  Image.asset('assets/images/main.png',
+                    height: 400,
+                    width: 400,
                   ),
-                  const SizedBox(height: 25),
-                  const Text("Welcome back.", style: TextStyle(fontSize: 16),),
+                  const SizedBox(height: 8.0),
+                  Text("Green Heaven", style: TextStyle(fontSize: 36, fontWeight: FontWeight.w600, color: HexColor("#38C1CE"))),
                   const SizedBox(height: 25),
                   AuthTextField(controller: emailController, hintText: 'Email', obscureText: false),
                   const SizedBox(height: 25),

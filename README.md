@@ -1,7 +1,6 @@
 # E-Commerce-Flutter
 
 ## Green Heaven
-[https://e-commerce-flutter-two.vercel.app]
 An online nursery build in flutter.
 The application encompasses following features:
 * Home page to display brand information, featured, and exclusive flowers.
@@ -11,6 +10,6 @@ The application encompasses following features:
 ### Extras
 * Checkout page (to include shopper's address & contact)
 * Content Management System (CMS) to manage the application
-
+## Demo : https://e-commerce-flutter-two.vercel.app/
 ## User Interface
-(https://github.com/ahmedhassantariq/e-commerce-flutter/blob/master/E-Commerce-Flutter.png)
+![alt text](https://github.com/ahmedhassantariq/e-commerce-flutter/blob/master/E-Commerce-Flutter.png)

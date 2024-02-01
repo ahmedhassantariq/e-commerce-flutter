@@ -1,16 +1,16 @@
-# business_flutter
+# E-Commerce-Flutter
 
-A new Flutter project.
+## Green Heaven
+[https://e-commerce-flutter-two.vercel.app]
+An online nursery build in flutter.
+The application encompasses following features:
+* Home page to display brand information, featured, and exclusive flowers.
+* Contact page with frequently asked questions and message features.
+* Store page to explore and manage shopping cart.
+* Profile page to manage user profile.
+### Extras
+* Checkout page (to include shopper's address & contact)
+* Content Management System (CMS) to manage the application
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## User Interface
+(https://github.com/ahmedhassantariq/e-commerce-flutter/blob/master/E-Commerce-Flutter.png)
